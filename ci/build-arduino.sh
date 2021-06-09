@@ -27,6 +27,6 @@ ls
 #for f in **/*.ino ; do
 arduino-cli compile -b arduino:avr:uno --export-binaries $PWD/promini_blink.ino
 echo "listing files---"
-ls -lh
+ls -Rlh
 #promini_blink.ino
 #done
