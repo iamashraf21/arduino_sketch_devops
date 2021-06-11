@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: $(PATH)
+- script: '$(PATH)'
   displayName: 'Run a one-line script'
 
 - script: |
