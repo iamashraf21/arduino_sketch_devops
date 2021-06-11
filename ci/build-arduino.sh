@@ -12,7 +12,7 @@ mkdir $HOME/Arduino/libraries
 # Install Arduino IDE
 export PATH=$PATH:$GITHUB_WORKSPACE/bin
 curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
-echo $PATH
+cd $GITHUB_WORKSPACE/bin
 arduino-cli config init
 arduino-cli core update-index
 
