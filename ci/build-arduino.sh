@@ -20,13 +20,13 @@ arduino-cli core update-index
 arduino-cli core install arduino:avr
 
 # Link Arduino library
-#ln -s $GITHUB_WORKSPACE $HOME/Arduino/libraries/CI_Test_Library
+ln -s $GITHUB_WORKSPACE $HOME/Arduino/libraries/CI_Test_Library
 echo "Printing pwd"
 pwd
 echo "list files"
 ls
 # Compile all *.ino files for the Arduino Uno
-#for f in **/*.ino ; do
+for f in **/*.ino ; do
 arduino-cli compile -b arduino:avr:uno --export-binaries $PWD/promini_blink.ino
 echo "listing files---"
 ls -Rlh
