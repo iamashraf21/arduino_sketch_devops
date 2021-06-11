@@ -10,7 +10,8 @@ cd $GITHUB_WORKSPACE
 mkdir $HOME/Arduino
 mkdir $HOME/Arduino/libraries
 # Install Arduino IDE
-export PATH=$PATH:$GITHUB_WORKSPACE/bin
+export PATH="$GITHUB_WORKSPACE/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
 arduino-cli config init
 arduino-cli core update-index
@@ -19,14 +20,15 @@ arduino-cli core update-index
 arduino-cli core install arduino:avr
 
 # Link Arduino library
-#ln -s $GITHUB_WORKSPACE $HOME/Arduino/libraries/CI_Test_Library
+ln -s $GITHUB_WORKSPACE $HOME/Arduino/libraries/CI_Test_Library
 echo "Printing pwd"
 pwd
 echo "list files"
 ls
 # Compile all *.ino files for the Arduino Uno
-#for f in **/*.ino ; do
-arduino-cli compile -b arduino:avr:uno --export-binaries $PWD/promini_blink.ino
+for f in **/*.ino ; do
+  arduino-cli compile -b arduino:avr:uno --export-binaries $PWD/arduino_sketch_devops.ino
+done
 echo "listing files---"
 ls -Rlh
 #promini_blink.ino
