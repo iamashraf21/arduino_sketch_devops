@@ -29,7 +29,3 @@ ls
 for f in **/*.ino ; do
   arduino-cli compile -b arduino:avr:uno $f
 done
-echo "listing files---"
-ls -Rlh
-#promini_blink.ino
-#done
