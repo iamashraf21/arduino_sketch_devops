@@ -27,8 +27,8 @@ echo "list files"
 ls
 # Compile all *.ino files for the Arduino Uno
 for f in **/*.ino ; do
-  arduino-cli compile -b arduino:avr:uno --export-binaries $PWD/vsts.ino
+  arduino-cli compile -b arduino:avr:uno --export-binaries $PWD/arduino_sketch_devops.ino
 echo "listing files---"
 ls -Rlh
-vsts.ino
+#arduino_sketch_devops.ino
 done
