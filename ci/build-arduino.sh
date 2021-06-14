@@ -25,10 +25,10 @@ echo "Printing pwd"
 pwd
 echo "list files"
 ls
+echo "listing files---"
+ls -Rlh
 # Compile all *.ino files for the Arduino Uno
 for f in **/*.ino ; do
   arduino-cli compile -b arduino:avr:uno --export-binaries $PWD/arduino_sketch_devops.ino
-echo "listing files---"
-ls -Rlh
 #arduino_sketch_devops.ino
 done
