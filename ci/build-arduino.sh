@@ -31,4 +31,4 @@ for f in **/*.ino ; do
 echo "listing files---"
 ls -Rlh
 #promini_blink.ino
-#done
+done
