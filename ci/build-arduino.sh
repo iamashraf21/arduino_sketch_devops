@@ -14,6 +14,12 @@ export PATH="$GITHUB_WORKSPACE/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
 arduino-cli config init
+echo "# arduino-cli.yaml
+board_manager:
+  additional_urls:
+    - http://arduino.esp8266.com/stable/package_esp8266com_index.json
+    - https://adafruit.github.io/arduino-board-index/package_adafruit_index.json
+    - https://raw.githubusercontent.com/Seeed-Studio/Seeed_Platform/master/package_seeeduino_boards_index.json" > /home/vsts/.arduino15/arduino-cli.yaml
 arduino-cli core update-index
 
 # Install Arduino AVR core
