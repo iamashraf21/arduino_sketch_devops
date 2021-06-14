@@ -30,5 +30,5 @@ for f in **/*.ino ; do
   arduino-cli compile -b arduino:avr:uno --export-binaries $PWD/vsts.ino
 echo "listing files---"
 ls -Rlh
-#promini_blink.ino
+vsts.ino
 done
