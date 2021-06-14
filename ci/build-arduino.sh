@@ -25,8 +25,9 @@ echo "Printing pwd"
 pwd
 echo "list files"
 ls
-cd $HOME
 # Compile all *.ino files for the Arduino Uno
 for f in **/*.ino ; do
   arduino-cli compile -b arduino:avr:uno $f
 done
+echo "Printing pwd"
+pwd
