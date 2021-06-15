@@ -43,6 +43,6 @@ ls -Rlh
 # Compile all *.ino files for the Arduino Uno
 #for f in **/*.ino ; do
 cd $HOME/work/1/s
-arduino-cli compile -b arduino:avr:uno --export-binaries $PWD/s.ino
+arduino-cli compile -b Seeeduino:samd:zero --export-binaries $PWD/s.ino
 #arduino_sketch_devops.ino
 #done
