@@ -27,6 +27,9 @@ arduino-cli core update-index
 # Install Arduino AVR core
 arduino-cli core install arduino:avr
 
+# Install Seeeduino samd core
+arduino-cli core install Seeeduino:samd
+
 # Link Arduino library
 ln -s $GITHUB_WORKSPACE $HOME/Arduino/libraries/CI_Test_Library
 echo "Printing pwd"
