@@ -24,6 +24,8 @@ board_manager:
 cat /home/vsts/.arduino15/arduino-cli.yaml
 arduino-cli core update-index
 
+arduino-cli core search Seeeduino
+
 # Install Arduino AVR core
 arduino-cli core install arduino:avr
 
