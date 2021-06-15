@@ -44,5 +44,6 @@ ls -Rlh
 #for f in **/*.ino ; do
 cd $HOME/work/1/s
 arduino-cli compile -b Seeeduino:samd:zero 
+ls -l
 #arduino_sketch_devops.ino
 #done
