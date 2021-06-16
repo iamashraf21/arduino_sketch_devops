@@ -3,6 +3,14 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+resources:
+  repositories:
+  - repository: arduino_sketch_devops
+    type: github
+    endpoint: https://github.com/iamashraf21/arduino_sketch_devops.git
+    name: MyGitHubRepo
+    ref: tools
+
 trigger:
   - main
 
@@ -10,6 +18,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- checkout: arduino_sketch_devops
 - script: ./build-arduino.sh
   workingDirectory: '$(Build.SourcesDirectory)/ci'
   displayName: 'arduino build'
