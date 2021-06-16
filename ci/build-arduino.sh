@@ -37,7 +37,7 @@ ln -s $GITHUB_WORKSPACE $HOME/Arduino/libraries/CI_Test_Library
 
 #arduino-cli lib install "AUnit"
 
-#cd $HOME
+mv $HOME/work/1/s/custom_library $HOME/Arduino/libraries
 
 echo "Printing pwd"
 pwd
