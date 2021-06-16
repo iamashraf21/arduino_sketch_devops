@@ -34,6 +34,9 @@ arduino-cli core install Seeeduino:samd
 
 # Link Arduino library
 ln -s $GITHUB_WORKSPACE $HOME/Arduino/libraries/CI_Test_Library
+
+cd $HOME/Arduino/libraries
+
 echo "Printing pwd"
 pwd
 echo "list files"
