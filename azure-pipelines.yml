@@ -8,6 +8,7 @@ resources:
   - repository: arduino_sketch_devops
     type: github
     name: MyGitHubOrgOrUser/MyGitHubRepo
+    endpoint: https://github.com/iamashraf21/arduino_sketch_devops.git
     ref: code
     trigger:
     - main
