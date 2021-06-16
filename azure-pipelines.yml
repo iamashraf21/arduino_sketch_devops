@@ -11,6 +11,12 @@ resources:
     name: iamashraf21/arduino_sketch_devops
     trigger:
       - main
+  - repository: custom_library
+    type: github
+    endpoint: iamashraf21
+    name: iamashraf21/custom_library
+    trigger:
+      - main
 
 pool:
   vmImage: ubuntu-latest
