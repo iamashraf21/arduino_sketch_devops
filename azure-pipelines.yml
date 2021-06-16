@@ -10,6 +10,8 @@ resources:
     endpoint: iamashraf21
     name: MyGitHubRepo
     ref: tools
+    trigger:
+      - main
 
 trigger:
   - main
