@@ -28,6 +28,6 @@ steps:
   displayName: 'Seeeduino build'
 
 - checkout: custom_library
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
+- script: ls
+  workingDirectory: '$(Build.SourcesDirectory)/custom_library/'
   displayName: 'custom library script'
