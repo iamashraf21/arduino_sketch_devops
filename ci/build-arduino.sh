@@ -37,7 +37,7 @@ ln -s $GITHUB_WORKSPACE $HOME/Arduino/libraries/CI_Test_Library
 
 arduino-cli lib install "AUnit"
 
-cd $HOME/Arduino/libraries
+cd $HOME/work/1/s
 
 echo "Printing pwd"
 pwd
@@ -47,7 +47,7 @@ echo "listing files---"
 ls -Rlh
 # Compile all *.ino files for the Arduino Uno
 #for f in **/*.ino ; do
-cd $HOME/work/1/s
+#cd $HOME/work/1/s
 arduino-cli compile -b Seeeduino:samd:zero 
 ls -l
 #arduino_sketch_devops.ino
