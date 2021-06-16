@@ -7,7 +7,7 @@ resources:
   repositories:
   - repository: arduino_sketch_devops
     type: github
-    endpoint: https://github.com/iamashraf21/arduino_sketch_devops.git
+    endpoint: iamashraf21
     name: MyGitHubRepo
     ref: tools
 
