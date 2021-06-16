@@ -22,12 +22,12 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- checkout: arduino_sketch_devops
-- script: ./build-arduino.sh
-  workingDirectory: '$(Build.SourcesDirectory)/arduino_sketch_devops/ci'
-  displayName: 'Seeeduino build'
-
 - checkout: custom_library
 - script: ls
   workingDirectory: '$(Build.SourcesDirectory)/custom_library/'
   displayName: 'custom library script'
+
+- checkout: arduino_sketch_devops
+- script: ./build-arduino.sh
+  workingDirectory: '$(Build.SourcesDirectory)/arduino_sketch_devops/ci'
+  displayName: 'Seeeduino build'
