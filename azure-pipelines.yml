@@ -22,7 +22,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- checkout: sketchFolder
+- checkout: arduino_sketch_devops
 - script: ./build-arduino.sh
   workingDirectory: '$(Build.SourcesDirectory)/ci'
   displayName: 'Seeeduino build'
