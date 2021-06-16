@@ -39,6 +39,9 @@ ln -s $GITHUB_WORKSPACE $HOME/Arduino/libraries/CI_Test_Library
 
 mv $HOME/work/1/s/custom_library $HOME/Arduino/libraries
 
+echo "printing list of libraries dir"
+ls $HOME/Arduino/libraries
+
 echo "Printing pwd"
 pwd
 echo "list files"
