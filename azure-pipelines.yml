@@ -8,8 +8,7 @@ resources:
   - repository: arduino_sketch_devops
     type: github
     endpoint: iamashraf21
-    name: arduino_sketch_devops
-    ref: tools
+    name: iamashraf21/arduino_sketch_devops
     trigger:
       - main
 
