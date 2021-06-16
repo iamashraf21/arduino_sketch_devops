@@ -17,7 +17,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- checkout: checkout: MyGitHubRepo
+- checkout: MyGitHubRepo
 - script: ./build-arduino.sh
   workingDirectory: '$(Build.SourcesDirectory)/ci'
   displayName: 'arduino build'
