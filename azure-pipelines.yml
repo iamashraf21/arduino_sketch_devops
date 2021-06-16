@@ -24,7 +24,7 @@ pool:
 steps:
 - checkout: arduino_sketch_devops
 - script: ./build-arduino.sh
-  workingDirectory: '$(Build.SourcesDirectory)/ci'
+  workingDirectory: '$(Build.SourcesDirectory)/arduino_sketch_devops/ci'
   displayName: 'Seeeduino build'
 
 - checkout: custom_library
