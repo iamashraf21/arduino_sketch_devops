@@ -22,9 +22,10 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- checkout: sketchFolder
 - script: ./build-arduino.sh
   workingDirectory: '$(Build.SourcesDirectory)/ci'
-  displayName: 'arduino build'
+  displayName: 'Seeeduino build'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
