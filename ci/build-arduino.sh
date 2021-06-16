@@ -21,10 +21,10 @@ board_manager:
     - https://adafruit.github.io/arduino-board-index/package_adafruit_index.json
     - https://files.seeedstudio.com/arduino/package_seeeduino_boards_index.json" > /home/vsts/.arduino15/arduino-cli.yaml
     
-cat /home/vsts/.arduino15/arduino-cli.yaml
+#cat /home/vsts/.arduino15/arduino-cli.yaml
 arduino-cli core update-index
 
-arduino-cli core search Seeeduino
+#arduino-cli core search Seeeduino
 
 # Install Arduino AVR core
 arduino-cli core install arduino:avr
@@ -35,9 +35,9 @@ arduino-cli core install Seeeduino:samd
 # Link Arduino library
 ln -s $GITHUB_WORKSPACE $HOME/Arduino/libraries/CI_Test_Library
 
-arduino-cli lib install "AUnit"
+#arduino-cli lib install "AUnit"
 
-cd $HOME
+#cd $HOME
 
 echo "Printing pwd"
 pwd
