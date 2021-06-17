@@ -36,3 +36,11 @@ steps:
   inputs:
     ArtifactName: 'build-artifacts'
     targetPath: './arduino_sketch_devops/build'
+- task: UniversalPackages@0
+  inputs:
+    command: 'publish'
+    publishDirectory: './arduino_sketch_devops/build'
+    feedsToUsePublish: 'internal'
+    vstsFeedPublish: 'c7e54f94-5edf-4148-8307-6fc152f42f8b/50aafe39-34db-4153-93fa-13522ecb0c89'
+    vstsFeedPackagePublish: 'ecdsa'
+    versionOption: 'patch'
