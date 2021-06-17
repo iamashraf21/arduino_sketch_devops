@@ -31,11 +31,6 @@ steps:
 - script: ./build-arduino.sh
   workingDirectory: '$(Build.SourcesDirectory)/arduino_sketch_devops/ci'
   displayName: 'Seeeduino build'
-#- task: PublishPipelineArtifact@0
-#  displayName: Artifacts
-#  inputs:
-#    ArtifactName: 'build-artifacts'
-#    targetPath: './arduino_sketch_devops/build'
 - task: UniversalPackages@0
   inputs:
     command: 'publish'
