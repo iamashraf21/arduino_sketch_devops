@@ -35,4 +35,4 @@ steps:
   displayName: Artifacts
   inputs:
     ArtifactName: 'drop'
-    targetPath: './output'
+    targetPath: './arduino_sketch_devops'
