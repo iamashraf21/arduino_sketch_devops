@@ -7,8 +7,8 @@ shopt -s globstar
 # Make sure we are inside the github workspace
 cd $GITHUB_WORKSPACE
 # Create directories
-mkdir $HOME/Arduino
-mkdir $HOME/Arduino/libraries
+#mkdir $HOME/Arduino
+#mkdir $HOME/Arduino/libraries
 # Install Arduino IDE
 export PATH="$GITHUB_WORKSPACE/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
