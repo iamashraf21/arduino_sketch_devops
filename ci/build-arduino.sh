@@ -24,23 +24,10 @@ board_manager:
 #cat /home/vsts/.arduino15/arduino-cli.yaml
 arduino-cli core update-index
 
-#arduino-cli core search Seeeduino
-
-# Install Arduino AVR core
-arduino-cli core install arduino:avr
-
-# Install Seeeduino samd core
-arduino-cli core install Seeeduino:samd
-
 # Link Arduino library
 #ln -s $GITHUB_WORKSPACE $HOME/Arduino/libraries/CI_Test_Library
 
-#arduino-cli lib install "AUnit"
-
-mv $HOME/work/1/s/custom_library $HOME/Arduino/libraries
-
-echo "printing list of libraries dir"
-ls $HOME/Arduino/libraries
+#mv $HOME/work/1/s/custom_library $HOME/Arduino/libraries
 
 echo "Printing pwd"
 pwd
@@ -50,8 +37,8 @@ echo "listing files---"
 ls -Rlh
 # Compile all *.ino files for the Arduino Uno
 #for f in **/*.ino ; do
-cd $HOME/work/1/s/arduino_sketch_devops
-arduino-cli compile -b Seeeduino:samd:zero -e
-ls -l
+#cd $HOME/work/1/s/arduino_sketch_devops
+#arduino-cli compile -b Seeeduino:samd:zero -e
+#ls -l
 #arduino_sketch_devops.ino
 #done
