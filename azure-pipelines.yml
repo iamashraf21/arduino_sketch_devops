@@ -18,8 +18,7 @@ resources:
     trigger:
       - main
 
-pool:
-  vmImage: ubuntu-latest
+pool: MyAgentLocal
 
 steps:
 - checkout: custom_library
