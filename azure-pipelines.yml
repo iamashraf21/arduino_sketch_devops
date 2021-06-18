@@ -18,7 +18,7 @@ resources:
     trigger:
       - main
 
-pool: MyAgentLocal
+pool: ubuntu-VirtualBox
 
 steps:
 - checkout: custom_library
