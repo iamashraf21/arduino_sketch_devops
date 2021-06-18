@@ -33,7 +33,7 @@ arduino-cli core install arduino:avr
 arduino-cli core install Seeeduino:samd
 
 # Link Arduino library
-ln -s $GITHUB_WORKSPACE $HOME/Arduino/libraries/CI_Test_Library
+#ln -s $GITHUB_WORKSPACE $HOME/Arduino/libraries/CI_Test_Library
 
 #arduino-cli lib install "AUnit"
 
