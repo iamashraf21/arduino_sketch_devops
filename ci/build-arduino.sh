@@ -13,7 +13,7 @@ mkdir $HOME/Arduino/libraries
 export PATH="$GITHUB_WORKSPACE/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 curl -fsSL https://raw.githubusercontent.com/arduino/arduino-cli/master/install.sh | sh
-arduino-cli config init
+arduino-cli config init --overwrite
 echo "# arduino-cli.yaml
 board_manager:
   additional_urls:
