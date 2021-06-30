@@ -12,9 +12,8 @@ echo "list files"
 ls
 echo "listing files---"
 ls -Rlh
-# Compile all *.ino files for the Arduino Uno
-#for f in **/*.ino ; do
-cd /home/ubuntu/Documents/myagent/_work/1/s/arduino_sketch_devops
+pwd
+cd $HOME/Documents/myagent/_work/1/s/arduino_sketch_devops
 arduino-cli compile -b Seeeduino:samd:zero -e
 ls -l
 #arduino_sketch_devops.ino
