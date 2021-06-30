@@ -30,6 +30,15 @@ steps:
 - script: ./build-arduino.sh
   workingDirectory: '$(Build.SourcesDirectory)/arduino_sketch_devops/ci'
   displayName: 'Seeeduino build'
+- checkout: TestSetup
+- script: ./build-arduino.sh
+  displayName: 'Run Bash Script'
+  workingDirectory: '$(Build.SourcesDirectory)/TestSetup/ci'
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'NUnit'
+    testResultsFiles: '$(Build.SourcesDirectory)/TestSetup/test/test-results.xml'
+    testRunTitle: 'Publish test results'
 - task: UniversalPackages@0
   inputs:
     command: 'publish'
