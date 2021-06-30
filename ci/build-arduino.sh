@@ -13,7 +13,7 @@ ls
 echo "listing files---"
 ls -Rlh
 pwd
-cd $HOME/Documents/myagent/_work/1/s/arduino_sketch_devops
+cd $(Build.SourcesDirectory)/arduino_sketch_devops/ci
 arduino-cli compile -b Seeeduino:samd:zero -e
 ls -l
 #arduino_sketch_devops.ino
