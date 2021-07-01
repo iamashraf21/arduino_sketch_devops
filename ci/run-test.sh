@@ -5,6 +5,7 @@ set -e
 # Enable the globstar shell option
 shopt -s globstar
 # Make sure we are inside the github workspace
+cd $HOME/Documents/myagent
 echo "Listing files"
 ls -lRh
 #cd $HOME/Documents/myagent/_work/2/s/custom_library/test/
