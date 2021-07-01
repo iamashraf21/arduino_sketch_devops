@@ -17,21 +17,10 @@ resources:
     name: iamashraf21/custom_library
     trigger:
       - main
-  - repository: TestSetup
-    type: github
-    endpoint: iamashraf21
-    name: iamashraf21/TestSetup
-    trigger:
-      - main
 
 pool: MyLocalPool
 
 steps:
- 
-- checkout: TestSetup
-- script: ./build-arduino.sh
-  displayName: 'Test build'
-  workingDirectory: '$(Build.SourcesDirectory)/TestSetup/ci'
   
 - task: PublishTestResults@2
   inputs:
