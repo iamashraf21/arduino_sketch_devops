@@ -6,6 +6,6 @@ set -e
 shopt -s globstar
 # Make sure we are inside the github workspace
 
-#cd $HOME/Documents/myagent/_work/2/s/arduino_sketch_devops
-#arduino-cli compile -b Seeeduino:samd:zero -e
+cd $HOME/Documents/myagent/_work/3/s/arduino_sketch_devops
+arduino-cli compile -b Seeeduino:samd:zero -e
 
