@@ -28,9 +28,9 @@ pool: MyLocalPool
 
 steps:
 - checkout: custom_library
-- script: ls
+- script: |
   workingDirectory: '$(Build.SourcesDirectory)/custom_library/'
-  displayName: 'custom library script'
+  displayName: 'custom library checkout'
 
 - checkout: arduino_sketch_devops
 - script: ./build-arduino.sh
