@@ -6,13 +6,6 @@ set -e
 shopt -s globstar
 # Make sure we are inside the github workspace
 
-cd $HOME/Documents/myagent/_work/2/s/custom_library/
-arduino-cli compile -b Seeeduino:samd:zero -e
-arduino-cli upload -p /dev/ttyACM0 -b Seeeduino:samd:zero
-
-sleep 5
-python SerialRead.py
-
-cd $HOME/Documents/myagent/_work/2/s/arduino_sketch_devops
-arduino-cli compile -b Seeeduino:samd:zero -e
+#cd $HOME/Documents/myagent/_work/2/s/arduino_sketch_devops
+#arduino-cli compile -b Seeeduino:samd:zero -e
 
