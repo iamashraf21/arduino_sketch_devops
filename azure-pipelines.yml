@@ -26,7 +26,8 @@ steps:
 - script: |
   workingDirectory: '$(Build.SourcesDirectory)/custom_library/'
   displayName: 'custom library checkout'
-  
+
+- checkout: arduino_sketch_devops  
 - script: ./run-test.sh
   workingDirectory: '$(Build.SourcesDirectory)/arduino_sketch_devops/ci'
   displayName: 'Run test script'
@@ -37,7 +38,6 @@ steps:
     testRunTitle: 'Publish test results'
     failTaskOnFailedTests: true
 
-- checkout: arduino_sketch_devops
 - script: ./build-arduino.sh
   workingDirectory: '$(Build.SourcesDirectory)/arduino_sketch_devops/ci'
   displayName: 'Seeeduino build'
