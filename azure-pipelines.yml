@@ -21,18 +21,21 @@ resources:
 pool: MyLocalPool
 
 steps:
+
+- checkout: custom_library
+- script: |
+  workingDirectory: '$(Build.SourcesDirectory)/custom_library/'
+  displayName: 'custom library checkout'
   
+- script: ./run-test.sh
+  workingDirectory: '$(Build.SourcesDirectory)/arduino_sketch_devops/ci'
+  displayName: 'Run test script'
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'NUnit'
     testResultsFiles: '$(Build.SourcesDirectory)/TestSetup/test/test-results.xml'
     testRunTitle: 'Publish test results'
     failTaskOnFailedTests: true
-
-- checkout: custom_library
-- script: |
-  workingDirectory: '$(Build.SourcesDirectory)/custom_library/'
-  displayName: 'custom library checkout'
 
 - checkout: arduino_sketch_devops
 - script: ./build-arduino.sh
