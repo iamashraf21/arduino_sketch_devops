@@ -39,7 +39,7 @@ steps:
   
 - checkout: TestSetup
 - script: ./build-arduino.sh
-  displayName: 'Run Bash Script'
+  displayName: 'Test build'
   workingDirectory: '$(Build.SourcesDirectory)/TestSetup/ci'
   
 - task: PublishTestResults@2
