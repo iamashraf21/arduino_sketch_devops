@@ -8,10 +8,10 @@ shopt -s globstar
 cd $HOME/Documents/myagent
 echo "Listing files"
 ls -lRh
-#cd $HOME/Documents/myagent/_work/2/s/custom_library/test/
-#arduino-cli compile -b Seeeduino:samd:zero -e
-#arduino-cli upload -p /dev/ttyACM0 -b Seeeduino:samd:zero
+cd $HOME/Documents/myagent/_work/3/s/custom_library/test/
+arduino-cli compile -b Seeeduino:samd:zero -e
+arduino-cli upload -p /dev/ttyACM0 -b Seeeduino:samd:zero
 
-#sleep 5
-#python SerialRead.py
+sleep 5
+python SerialRead.py
 
