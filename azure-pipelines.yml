@@ -28,16 +28,6 @@ steps:
   displayName: 'custom library checkout'
 
 - checkout: arduino_sketch_devops  
-- script: ./run-test.sh
-  workingDirectory: '$(Build.SourcesDirectory)/arduino_sketch_devops/ci'
-  displayName: 'Run test script'
-- task: PublishTestResults@2
-  inputs:
-    testResultsFormat: 'NUnit'
-    testResultsFiles: '$(Build.SourcesDirectory)/custom_library/test/test-results.xml'
-    testRunTitle: 'Publish test results'
-    failTaskOnFailedTests: true
-
 - script: ./build-arduino.sh
   workingDirectory: '$(Build.SourcesDirectory)/arduino_sketch_devops/ci'
   displayName: 'Seeeduino build'
