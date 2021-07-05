@@ -5,10 +5,10 @@
 
 resources:
   repositories:
-  - repository: arduino_sketch_devops
+  - repository: firmware
     type: github
     endpoint: iamashraf21
-    name: iamashraf21/arduino_sketch_devops
+    name: iamashraf21/firmware
     trigger:
       - main
   - repository: custom_library
@@ -27,15 +27,15 @@ steps:
   workingDirectory: '$(Build.SourcesDirectory)/custom_library/'
   displayName: 'custom library checkout'
 
-- checkout: arduino_sketch_devops  
+- checkout: firmware  
 - script: ./build-arduino.sh
-  workingDirectory: '$(Build.SourcesDirectory)/arduino_sketch_devops/ci'
+  workingDirectory: '$(Build.SourcesDirectory)/firmware/ci'
   displayName: 'Seeeduino build'
     
 - task: UniversalPackages@0
   inputs:
     command: 'publish'
-    publishDirectory: './arduino_sketch_devops/build'
+    publishDirectory: './firmware/build'
     feedsToUsePublish: 'internal'
     vstsFeedPublish: 'c7e54f94-5edf-4148-8307-6fc152f42f8b/50aafe39-34db-4153-93fa-13522ecb0c89'
     vstsFeedPackagePublish: 'ecdsa'
