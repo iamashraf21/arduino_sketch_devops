@@ -24,13 +24,23 @@ steps:
 
 - checkout: custom_library
 - script: ./run-test.sh
-  workingDirectory: '$(Build.SourcesDirectory)/ci'
+  workingDirectory: '$(Build.SourcesDirectory)/custom_library/ci'
   displayName: 'Running AUnit tests'
 
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'NUnit'
+    testResultsFiles: '$(Build.SourcesDirectory)/custom_libra- checkout: custom_library
+- script: ./run-test.sh
+  workingDirectory: '$(Build.SourcesDirectory)/ci'
+  displayName: 'custom library checkout'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'NUnit'
     testResultsFiles: '$(Build.SourcesDirectory)/test/test-results.xml'
+    testRunTitle: 'Publish test results'
+    failTaskOnFailedTests: truery/test/test-results.xml'
     testRunTitle: 'Publishing test results'
     failTaskOnFailedTests: true
 
