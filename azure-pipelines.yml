@@ -11,12 +11,14 @@ resources:
     name: iamashraf21/firmware
     trigger:
       - main
+      - dev
   - repository: custom_library
     type: github
     endpoint: iamashraf21
     name: iamashraf21/custom_library
     trigger:
       - main
+      - dev
 
 pool: MyLocalPool
 
