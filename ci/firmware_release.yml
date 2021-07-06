@@ -21,19 +21,16 @@ resources:
 pool: MyLocalPool
 
 steps:
-
 - checkout: custom_library
 - script: ./run-test.sh
   workingDirectory: '$(Build.SourcesDirectory)/custom_library/ci'
-  displayName: 'Running AUnit tests'
+  displayName: 'custom library checkout'
 
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'NUnit'
     testResultsFiles: '$(Build.SourcesDirectory)/custom_library/test/test-results.xml'
     testRunTitle: 'Publish test results'
-    failTaskOnFailedTests: truery/test/test-results.xml'
-    testRunTitle: 'Publishing test results'
     failTaskOnFailedTests: true
 
 - checkout: firmware  
