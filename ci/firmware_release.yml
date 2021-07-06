@@ -31,6 +31,10 @@ steps:
 - script: ./build-arduino.sh
   workingDirectory: '$(Build.SourcesDirectory)/firmware/ci'
   displayName: 'Seeeduino build'
+
+- script: ./sign.sh
+  workingDirectory: '$(Build.SourcesDirectory)/firmware/ci'
+  displayName: 'Sign the binaries'
     
 - task: UniversalPackages@0
   inputs:
