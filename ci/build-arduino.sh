@@ -8,4 +8,4 @@ shopt -s globstar
 cd ../
 arduino-cli compile -b Seeeduino:samd:zero -e
 cd build/Seeeduino.samd.zero/
-python ../ci/sign.py ../ci/private.pem firmware.ino.bin 1 --out ../../build_signed/firmware.signed 
+python ../../ci/sign.py ../../ci/private.pem firmware.ino.bin 1 --out ../../build_signed/firmware.signed 
