@@ -33,7 +33,7 @@ steps:
   displayName: 'Seeeduino build'
 
 - script: ./sign.sh
-  workingDirectory: '$(Build.SourcesDirectory)/firmware/ci'
+  workingDirectory: '$(Build.SourcesDirectory)/firmware'
   displayName: 'Sign the binaries'
     
 - task: UniversalPackages@0
