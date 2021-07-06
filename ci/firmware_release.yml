@@ -1,0 +1,44 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+resources:
+  repositories:
+  - repository: firmware
+    type: github
+    endpoint: iamashraf21
+    name: iamashraf21/firmware
+    trigger:
+      - main
+      - dev
+  - repository: custom_library
+    type: github
+    endpoint: iamashraf21
+    name: iamashraf21/custom_library
+    trigger:
+      - main
+      - dev
+
+pool: MyLocalPool
+
+steps:
+
+- checkout: custom_library
+- script: |
+  workingDirectory: '$(Build.SourcesDirectory)/custom_library/'
+  displayName: 'custom library checkout'
+
+- checkout: firmware  
+- script: ./build-arduino.sh
+  workingDirectory: '$(Build.SourcesDirectory)/firmware/ci'
+  displayName: 'Seeeduino build'
+    
+- task: UniversalPackages@0
+  inputs:
+    command: 'publish'
+    publishDirectory: './firmware/build'
+    feedsToUsePublish: 'internal'
+    vstsFeedPublish: 'c7e54f94-5edf-4148-8307-6fc152f42f8b/50aafe39-34db-4153-93fa-13522ecb0c89'
+    vstsFeedPackagePublish: 'ecdsa'
+    versionOption: 'patch'
