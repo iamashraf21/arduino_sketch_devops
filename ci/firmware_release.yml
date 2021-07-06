@@ -30,15 +30,7 @@ steps:
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'NUnit'
-    testResultsFiles: '$(Build.SourcesDirectory)/custom_libra- checkout: custom_library
-- script: ./run-test.sh
-  workingDirectory: '$(Build.SourcesDirectory)/ci'
-  displayName: 'custom library checkout'
-
-- task: PublishTestResults@2
-  inputs:
-    testResultsFormat: 'NUnit'
-    testResultsFiles: '$(Build.SourcesDirectory)/test/test-results.xml'
+    testResultsFiles: '$(Build.SourcesDirectory)/custom_library/test/test-results.xml'
     testRunTitle: 'Publish test results'
     failTaskOnFailedTests: truery/test/test-results.xml'
     testRunTitle: 'Publishing test results'
