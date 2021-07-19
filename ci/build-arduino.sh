@@ -6,4 +6,4 @@ set -e
 shopt -s globstar
 # Make sure we are inside the github workspace
 cd ../
-arduino-cli compile -b Seeeduino:samd:zero -e
+arduino-cli compile -b Moteino:samd:moteino_m0 -e
