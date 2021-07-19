@@ -31,7 +31,7 @@ steps:
 
 - checkout: custom_library
 - script: cp -r custom_library ~/Arduino/libraries
-  workingDirectory: '$(Build.SourcesDirectory)/custom_library/'
+  workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'custom library checkout'
 
 - checkout: firmware  
