@@ -36,16 +36,9 @@ steps:
   displayName: 'AUnit checkout'
 
 - checkout: custom_library
-- script: ./run-test.sh
+- script: |
   workingDirectory: '$(Build.SourcesDirectory)/custom_library/ci'
   displayName: 'Run Tests'
-
-- task: PublishTestResults@2
-  inputs:
-    testResultsFormat: 'NUnit'
-    testResultsFiles: '$(Build.SourcesDirectory)/custom_library/test/test-results.xml'
-    testRunTitle: 'Publish test results'
-    failTaskOnFailedTests: true
 
 - checkout: firmware  
 - script: ./build-arduino.sh
