@@ -37,7 +37,7 @@ steps:
 - checkout: firmware  
 - script: ./build-arduino.sh
   workingDirectory: '$(Build.SourcesDirectory)/firmware/ci'
-  displayName: 'Seeeduino build'
+  displayName: 'Moteino m0 build'
     
 - task: UniversalPackages@0
   inputs:
