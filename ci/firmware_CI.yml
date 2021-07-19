@@ -22,10 +22,15 @@ resources:
 
 pool: MyLocalPool
 
+container:
+  image: myworkregistry007.azurecr.io/build_repo:latest
+  endpoint: myWorkRegistry007
+  options: -v /dev:/dev --privileged
+
 steps:
 
 - checkout: custom_library
-- script: |
+- script: cp -r custom_library ~/Arduino/libraries
   workingDirectory: '$(Build.SourcesDirectory)/custom_library/'
   displayName: 'custom library checkout'
 
