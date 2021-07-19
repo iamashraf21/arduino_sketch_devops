@@ -5,6 +5,10 @@
 
 resources:
   repositories:
+  - repository: AUnit
+    type: github
+    endpoint: iamashraf21
+    name: iamashraf21/AUnit
   - repository: firmware
     type: github
     endpoint: iamashraf21
@@ -20,7 +24,17 @@ resources:
 
 pool: MyLocalPool
 
+container:
+  image: myworkregistry007.azurecr.io/build_repo:latest
+  endpoint: myWorkRegistry007
+  options: -v /dev:/dev --privileged
+
 steps:
+- checkout: AUnit
+- script: cp -r AUnit ~/Arduino/libraries
+  workingDirectory: '$(Build.SourcesDirectory)/'
+  displayName: 'AUnit checkout'
+
 - checkout: custom_library
 - script: ./run-test.sh
   workingDirectory: '$(Build.SourcesDirectory)/custom_library/ci'
@@ -36,7 +50,7 @@ steps:
 - checkout: firmware  
 - script: ./build-arduino.sh
   workingDirectory: '$(Build.SourcesDirectory)/firmware/ci'
-  displayName: 'Seeeduino build'
+  displayName: 'Seeeduino Build'
 
 - script: ./sign.sh
   workingDirectory: '$(Build.SourcesDirectory)/firmware/ci'
