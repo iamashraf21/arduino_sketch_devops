@@ -5,5 +5,11 @@ set -e
 # Enable the globstar shell option
 shopt -s globstar
 # Make sure we are inside the github workspace
+
 cd ../
+OUTPUT=$(find . -type d -name "test")
+if [ ${OUTPUT} = './test' ]
+	then arduino-cli compile -b Moteino:samd:moteino_m0
+fi
+
 arduino-cli compile -b Moteino:samd:moteino_m0 -e
