@@ -38,7 +38,7 @@ steps:
 - checkout: custom_library
 - script: |
   workingDirectory: '$(Build.SourcesDirectory)/custom_library/ci'
-  displayName: 'Run Tests'
+  displayName: 'Custom Library Checkout'
 
 - checkout: firmware  
 - script: ./build-arduino.sh
