@@ -29,11 +29,6 @@ container:
 
 steps:
 
-- checkout: custom_library
-- script: cp -r custom_library ~/Arduino/libraries
-  workingDirectory: '$(Build.SourcesDirectory)/'
-  displayName: 'custom library checkout'
-
 - task: UniversalPackages@0
   displayName: 'publishing the artifacts'
   inputs:
@@ -43,6 +38,10 @@ steps:
     vstsFeedPackage: 'custom_library'
     vstsPackageVersion: '0.0.2'
 
+- script: cp -r custom_library ~/Arduino/libraries
+  workingDirectory: '$(Build.SourcesDirectory)/'
+  displayName: 'custom library checkout'
+  
 - checkout: firmware  
 - script: ./build-arduino.sh
   workingDirectory: '$(Build.SourcesDirectory)/firmware/ci'
