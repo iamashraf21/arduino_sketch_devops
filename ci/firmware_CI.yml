@@ -36,6 +36,7 @@ steps:
 
 - task: DownloadPipelineArtifact@2
   inputs:
+    source: 'specific'
     artifact: 'custom_library'
     path: $(Build.SourcesDirectory)/
     project: 'c7e54f94-5edf-4148-8307-6fc152f42f8b'
