@@ -39,7 +39,7 @@ steps:
   inputs:
     command: 'download'
     downloadDirectory: '$(Build.SourcesDirectory)/'
-    vstsFeed: 'Pipeline_example/myFeeds'
+    vstsFeed: 'Pipiline_example/myFeeds'
     vstsFeedPackage: 'custom_library'
     vstsPackageVersion: '0.0.2'
 
