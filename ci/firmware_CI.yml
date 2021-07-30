@@ -29,7 +29,7 @@ container:
 
 steps:
 
-- script: mkdir custom_library
+- script: mkdir custom_library && mkdir firmware
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'make dir'
 - task: UniversalPackages@0
@@ -45,10 +45,12 @@ steps:
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'custom library checkout'
   
-- checkout: firmware  
+- checkout: firmware 
+  path: '$(Build.SourcesDirectory)/firmware'
 - script: ls
-  workingDirectory: '$(Build.SourcesDirectory)/'
+  workingDirectory: '$(Build.SourcesDirectory)'
   displayName: 'checkout'
+
 - script: ./build-arduino.sh
   workingDirectory: '$(Build.SourcesDirectory)/firmware/ci'
   displayName: 'Moteino m0 build'
