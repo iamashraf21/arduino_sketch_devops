@@ -30,7 +30,7 @@ container:
 steps:
 
 - task: UniversalPackages@0
-  displayName: 'publishing the artifacts'
+  displayName: 'Downloading the artifacts'
   inputs:
     command: 'download'
     downloadDirectory: '$(Build.SourcesDirectory)/'
@@ -38,7 +38,8 @@ steps:
     vstsFeedPackage: 'custom_library'
     vstsPackageVersion: '0.0.2'
 
-- script: cp -r custom_library ~/Arduino/libraries
+#- script: cp -r custom_library ~/Arduino/libraries
+- script: ls
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'custom library checkout'
   
