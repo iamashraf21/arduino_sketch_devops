@@ -34,16 +34,13 @@ steps:
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'custom library checkout'
 
-- task: UniversalPackages@0
+- task: DownloadPipelineArtifact@2
   inputs:
-    command: 'download'
-    publishDirectory: '$(Build.SourcesDirectory)/'
-    feedsToUse: 'internal'
-    vstsFeedPublish: 'c7e54f94-5edf-4148-8307-6fc152f42f8b/50aafe39-34db-4153-93fa-13522ecb0c89'
-    vstsFeedPackagePublish: 'custom_library'
-    versionOption: 'patch'
-    vstsPackageVersion: 'latest'
-  displayName: 'downloading the artifacts'
+    artifact: 'custom_library'
+    path: $(Build.SourcesDirectory)/
+    project: 'c7e54f94-5edf-4148-8307-6fc152f42f8b'
+    pipeline: 'Library_CI'
+    runVersion: 'latest'
 
 - checkout: firmware  
 - script: ./build-arduino.sh
