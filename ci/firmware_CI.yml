@@ -34,6 +34,11 @@ steps:
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'custom library checkout'
 
+- task: DownloadPipelineArtifact@2
+  inputs:
+    artifact: ecdsa
+    path: '$(Build.SourcesDirectory)/'
+
 - checkout: firmware  
 - script: ./build-arduino.sh
   workingDirectory: '$(Build.SourcesDirectory)/firmware/ci'
