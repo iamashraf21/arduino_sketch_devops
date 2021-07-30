@@ -29,17 +29,19 @@ container:
 
 steps:
 
+- script: mkdir custom_library
+  workingDirectory: '$(Build.SourcesDirectory)/'
+  displayName: 'make dir'
 - task: UniversalPackages@0
   displayName: 'Downloading the artifacts'
   inputs:
     command: 'download'
-    downloadDirectory: '$(Build.SourcesDirectory)/'
+    downloadDirectory: '$(Build.SourcesDirectory)/custom_library'
     vstsFeed: 'Pipiline_example/myFeeds'
     vstsFeedPackage: 'custom_library'
     vstsPackageVersion: '0.0.2'
 
-#- script: cp -r custom_library ~/Arduino/libraries
-- script: ls
+- script: cp -r custom_library ~/Arduino/libraries
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'custom library checkout'
   
