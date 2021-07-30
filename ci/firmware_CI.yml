@@ -46,6 +46,9 @@ steps:
   displayName: 'custom library checkout'
   
 - checkout: firmware  
+- script: ls
+  workingDirectory: '$(Build.SourcesDirectory)/'
+  displayName: 'checkout'
 - script: ./build-arduino.sh
   workingDirectory: '$(Build.SourcesDirectory)/firmware/ci'
   displayName: 'Moteino m0 build'
