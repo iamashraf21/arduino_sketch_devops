@@ -38,10 +38,11 @@ steps:
   inputs:
     command: 'download'
     publishDirectory: '.'
-    feedsToUsePublish: 'internal'
+    feedsToUse: 'internal'
     vstsFeedPublish: 'c7e54f94-5edf-4148-8307-6fc152f42f8b/50aafe39-34db-4153-93fa-13522ecb0c89'
     vstsFeedPackagePublish: 'custom_library'
     versionOption: 'patch'
+    vstsPackageVersion: '0.0.2'
   displayName: 'downloading the artifacts'
 
 - checkout: firmware  
