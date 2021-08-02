@@ -22,6 +22,12 @@ steps:
 - script: ls
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'make dir'
+
+- checkout: self
+  path: '$(Agent.BuildDirectory)/firmware/'
+- script: ls
+  workingDirectory: '$(Build.SourcesDirectory)'
+  displayName: 'checkout'
 - task: UniversalPackages@0
   displayName: 'Downloading the artifacts'
   inputs:
@@ -34,12 +40,6 @@ steps:
 - script: cp -r custom_library ~/Arduino/libraries
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'custom library checkout'
-  
-- checkout: self
-  path: $(Pipeline.Workspace)/s/firmware
-- script: ls
-  workingDirectory: '$(Build.SourcesDirectory)'
-  displayName: 'checkout'
 
 - script: ./build-arduino.sh
   workingDirectory: '$(Build.SourcesDirectory)/firmware/ci'
