@@ -25,7 +25,7 @@ container:
 
 steps:
 
-- script: ls
+- script: mkdir firmware
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'make dir'
 - task: UniversalPackages@0
