@@ -12,15 +12,13 @@ resources:
   - repository: firmware
     type: github
     endpoint: iamashraf21
-    name: iamashraf21/firmware
-    trigger:
-      - main
+    name: iamashraf21/main-firmware
+    trigger: none
   - repository: custom_library
     type: github
     endpoint: iamashraf21
     name: iamashraf21/custom_library
-    trigger:
-      - main
+    trigger: none
 
 pool: MyLocalPool
 
@@ -30,23 +28,24 @@ container:
   options: -v /dev:/dev --privileged
 
 steps:
+
 - checkout: AUnit
 - script: cp -r AUnit ~/Arduino/libraries
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'AUnit checkout'
 
 - checkout: custom_library
-- script: |
-  workingDirectory: '$(Build.SourcesDirectory)/custom_library/ci'
+- script: cp -r custom_library ~/Arduino/libraries
+  workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'Custom Library Checkout'
 
-- checkout: firmware  
+- checkout: main-firmware  
 - script: ./build-arduino.sh
-  workingDirectory: '$(Build.SourcesDirectory)/firmware/ci'
+  workingDirectory: '$(Build.SourcesDirectory)/main-firmware/ci'
   displayName: 'Seeeduino Build'
 
 - script: ./sign.sh
-  workingDirectory: '$(Build.SourcesDirectory)/firmware/ci'
+  workingDirectory: '$(Build.SourcesDirectory)/main-firmware/ci'
   displayName: 'Sign the binaries'
     
 - task: UniversalPackages@0
@@ -57,4 +56,4 @@ steps:
     vstsFeedPublish: 'c7e54f94-5edf-4148-8307-6fc152f42f8b/50aafe39-34db-4153-93fa-13522ecb0c89'
     vstsFeedPackagePublish: 'ecdsa'
     versionOption: 'patch'
-    displayName: 'publishing the artifacts'
+  displayName: 'publishing the artifacts'
