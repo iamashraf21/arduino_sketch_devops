@@ -5,7 +5,7 @@
 
 resources:
   pipelines:
-  - pipeline: custom-lib-ci   # Name of the pipeline resource
+  - pipeline: custom_library   # Name of the pipeline resource
     source: custom-lib-ci # Name of the pipeline referenced by the pipeline resource
     project: FabrikamProject # Required only if the source pipeline is in another project
     trigger: true # Run firmware-ci pipeline when any run of custom-lib-ci completes
