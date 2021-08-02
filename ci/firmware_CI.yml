@@ -31,7 +31,7 @@ steps:
     vstsFeedPackage: 'custom_library'
     vstsPackageVersion: '0.0.8'
 
-- script: mv -r custom_library ~/Arduino/libraries
+- script: cp -r custom_library ~/Arduino/libraries
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'custom library checkout'
   
