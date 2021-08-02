@@ -36,8 +36,7 @@ steps:
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'custom library checkout'
   
-- checkout: firmware 
-  #path: '$(Build.SourcesDirectory)/firmware'
+- checkout: firmware
 - script: ls
   workingDirectory: '$(Build.SourcesDirectory)'
   displayName: 'checkout'
