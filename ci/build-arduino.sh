@@ -11,5 +11,5 @@ OUTPUT=$(find . -type d -name "test")
 if [ ${OUTPUT} = './test' ]
 	then arduino-cli compile -b Moteino:samd:moteino_m0
 fi
-
+cd firmware
 arduino-cli compile -b Moteino:samd:moteino_m0 -e
