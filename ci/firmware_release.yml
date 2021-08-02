@@ -39,7 +39,7 @@ steps:
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'Custom Library Checkout'
 
-- checkout: main-firmware  
+- checkout: self  
 - script: ./build-arduino.sh
   workingDirectory: '$(Build.SourcesDirectory)/main-firmware/ci'
   displayName: 'Seeeduino Build'
