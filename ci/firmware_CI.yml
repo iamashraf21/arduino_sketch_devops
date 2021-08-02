@@ -24,7 +24,6 @@ steps:
   displayName: 'make dir'
 
 - checkout: self
-  path: '$(Agent.BuildDirectory)/firmware/'
 - script: ls
   workingDirectory: '$(Build.SourcesDirectory)'
   displayName: 'checkout'
@@ -42,7 +41,7 @@ steps:
   displayName: 'custom library checkout'
 
 - script: ./build-arduino.sh
-  workingDirectory: '$(Build.SourcesDirectory)/firmware/ci'
+  workingDirectory: '$(Build.SourcesDirectory)/ci'
   displayName: 'Moteino m0 build'
     
 - task: UniversalPackages@0
