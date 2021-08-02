@@ -34,7 +34,7 @@ steps:
     downloadDirectory: '$(Build.SourcesDirectory)/custom_library'
     vstsFeed: 'Pipiline_example/myFeeds'
     vstsFeedPackage: 'custom_library'
-    vstsPackageVersion: '0.0.8'
+    vstsPackageVersion: '0.0.9'
 
 - script: cp -r custom_library ~/Arduino/libraries
   workingDirectory: '$(Build.SourcesDirectory)/'
