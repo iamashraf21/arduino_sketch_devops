@@ -4,11 +4,6 @@
 # https://aka.ms/yaml
 
 resources:
-  repositories:
-  - repository: firmware
-    type: github
-    endpoint: iamashraf21
-    name: iamashraf21/firmware
   pipelines:
   - pipeline: custom-lib-ci   # Name of the pipeline resource
     source: custom-lib-ci # Name of the pipeline referenced by the pipeline resource
@@ -42,7 +37,7 @@ steps:
   displayName: 'custom library checkout'
   
 - checkout: firmware 
-  path: '$(Build.SourcesDirectory)/firmware'
+  #path: '$(Build.SourcesDirectory)/firmware'
 - script: ls
   workingDirectory: '$(Build.SourcesDirectory)'
   displayName: 'checkout'
