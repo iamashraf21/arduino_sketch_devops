@@ -10,7 +10,6 @@ resources:
     project: Pipiline_example # Required only if the source pipeline is in another project
     trigger: true # Run firmware-ci pipeline when any run of custom-lib-ci completes
   
-
 pool: MyLocalPool
 
 container:
@@ -32,11 +31,12 @@ steps:
     vstsFeedPackage: 'custom_library'
     vstsPackageVersion: '0.0.8'
 
-- script: cp -r custom_library ~/Arduino/libraries
+- script: mv -r custom_library ~/Arduino/libraries
   workingDirectory: '$(Build.SourcesDirectory)/'
   displayName: 'custom library checkout'
   
 - checkout: self
+  path: $(Build.SourcesDirectory)/firmware
 - script: ls
   workingDirectory: '$(Build.SourcesDirectory)'
   displayName: 'checkout'
