@@ -42,7 +42,7 @@ steps:
 - checkout: self  
 - script: ./build-arduino.sh
   workingDirectory: '$(Build.SourcesDirectory)/main-firmware/ci'
-  displayName: 'Seeeduino Build'
+  displayName: 'Moteino Build'
 
 - script: ./sign.sh
   workingDirectory: '$(Build.SourcesDirectory)/main-firmware/ci'
