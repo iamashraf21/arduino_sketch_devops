@@ -24,9 +24,6 @@ steps:
   displayName: 'make dir'
 
 - checkout: self
-- script: rm -r ~/Arduino/libraries/micro-ecc
-  workingDirectory: '$(Build.SourcesDirectory)/'
-  displayName: 'checkout'
 - task: UniversalPackages@0
   displayName: 'Downloading the artifacts'
   inputs:
